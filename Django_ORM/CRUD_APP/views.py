@@ -34,6 +34,7 @@ def category_handler(request, category_id=None):
     elif request.method == "DELETE" and category_id:
         category = get_object_or_404(ProductCategory, id=category_id)
         category.delete()
+        print("hey")
         return JsonResponse({"message": "Category deleted"})
 
     elif request.method == "GET":
